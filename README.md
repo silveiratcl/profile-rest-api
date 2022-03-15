@@ -93,6 +93,39 @@ When to use:
 + Little to no customization on the logic 
 
 
+## Planning Profiles API
+
+The app will have the following options:
+
+1. Create a new profile
++ Handle registration of new users
++ Validate profile data
+
+2. Listing existing profiles
++ Search for profiles
++ Email and name
+
+3. View sopacific profiles
++ Profile ID
+
+4. Update profile of logged in user
++ Change name, email and password
+
+5. Delete profile
+
+### API URLS
+
+`/api/profile/` 
++ list all profiles when *HTTP GET* method is called
++ create new profile when *HTTP POST* method is called
+
+`/api/profile/<profile>`
++ view specific profile details by using *HTTP GET*
++ update object using *HTTP PUT/PATCH*
++ remove it completely using *HTTP DELETE*
+
+
+
 
 
 
