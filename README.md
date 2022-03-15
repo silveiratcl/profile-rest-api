@@ -22,25 +22,35 @@ python manage.py runserver 0.0.0.0:8000
 
 ### Setting up the DataBase
 
+### Creating Serializers
+
+Serializer is a feature in django framework that allows you convert data inputs into python objects and vice-versa. Is similar to django forms when you define de inputs for your api.
+
+Receive de content posted into the api.
+
+
+## APIView and ViewSet
+
 ### Api Views
 
 1. APIview
-    Describe logic to make API endpoint
-API view allows to use the standar HTTP methods for functions.
+Describes the logic to make API endpoint.
+
+APIviews allows to use the standar HTTP methods for functions.
 + get - return one or more itens
 + post - create an item
 + put - update an item
 + patch - partially update an item
 
 APIviews give the most control over the logic:
-+ perfect for imprementing complex logic
++ perfect for implementing complex logic
 + Calling other APIs
 + Working with local files
 
 When to use APIviews:
-+ Nees full control over the logic
-+ Porcessing file and rendering a sychronous response
-+ You are calling other APIs/servieces
++ Needs full control over the logic
++ Processing file and rendering a sychronous response
++ You are calling other APIs/services
 + Acessing local files or data
 
 ### Create the first API View
@@ -51,21 +61,6 @@ Create views.py
 
 ```python
 
-
-
-```
-
-
-### Creating Serializers
-
-Serializer is a feature in django framework that allows you convert data inputs into python objects and vice-versa. Is similar to django forms when you define de inputs for your api.
-
-Receive de content posted into the api.
-
-
-
-```python
-
 from rest_framework import serializers
 
 class HelloSerializer(serializers.Serializer):
@@ -73,4 +68,34 @@ class HelloSerializer(serializers.Serializer):
     
 
 ```
+
+### Viewset 
+
+Just like API Views, ViewSets allow us write the logic for our endpoints, however instead of definig functions which map to HTTP view sets accept functions that map to common API objects actions:
+
+Uses model operation for function:
++ list - getting a lis of objects
++ create - create ne objects
++ retrive - getting anm specific object
++ update - update object
++ partial_update - updating part of an object
++ destroy - deleting an object
+
+Additionaly, ViewSets can take:
++ a lot of the common logic 
++ Perfect for standard database operations
++ Fastest way to make databases interfaces
+
+When to use:
+
++ Could be used into simple CRUD interface to your database
++ A quick and simple API
++ Little to no customization on the logic 
+
+
+
+
+
+
+
 
