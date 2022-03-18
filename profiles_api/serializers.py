@@ -36,7 +36,7 @@ class ProfileFeedItemSerializer(serializers.ModelSerializer):
         fields = ('id', 'user_profile', 'status_text', 'created_on')  
         extra_kwargs = {'user_profile': {'read_only': True}}
     
-    #wher came from this?
+    #where came from this?
     def update(self, instance, validated_data):
         """Handle updating user account"""
         
