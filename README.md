@@ -125,6 +125,33 @@ The app will have the following options:
 + remove it completely using *HTTP DELETE*
 
 
+### Plan profile feed API
+
+## Basic Requirements
+1. Create new feed itens
+    + logged user only
+2. Updating feed itens
+    + logged in user only
+3. Deleting profikle feed itens
+    + logged user only
+4. Viewing other profile status updates
+    + all users
+
+## API URLS
+
+`/api/feed/`
++ *LIST* all feed itens
++ *GET* (list feed items)
++ *POST* (create feed item for logged in user)
+
+`/api/feed/<feed_item_id>`
++ manage specific feed items
++ *GET* feed item
++ *PUT/PATCH* update feed item
++ *DELETE* delete feed item
+
+
+
 
 
 
